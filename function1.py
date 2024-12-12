@@ -1,7 +1,7 @@
 # Calculate Average Marks
-def AverageMarks(marks):
+def AverageMarks(marks,n):
     Sum = sum(marks)
-    Average = Sum/5
+    Average = Sum/n
     print("Average marks is", Average)
     return Average
 
@@ -17,7 +17,10 @@ def FindGrade(Average):
        grade = 'F'
     return grade
 
-marks = [55,64,75,80,65]
-Average = AverageMarks(marks)
+marks = []
+n = int(input("Enter the numbers of subject: "))
+for i in range(n):
+    marks.append(int(input("Enter the marks of subject "+str(i+1)+": ")))
+Average = AverageMarks(marks,n)
 grade = FindGrade(Average)
 print("Your Grade is ", grade)
